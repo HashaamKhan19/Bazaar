@@ -7,8 +7,8 @@ function App() {
   return (
     <main
       className={`${isDarkMode ? "dark" : "light"}
-      ${isDarkMode ? "text-foreground" : "text-background"}
-      ${isDarkMode ? "bg-background" : "bg-foreground"}
+      ${isDarkMode ? "text-background" : "text-foreground"}
+      ${isDarkMode ? "bg-foreground" : "bg-background"}
       h-screen
       font-Poppins
     `}
