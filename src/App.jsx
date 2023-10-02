@@ -1,4 +1,5 @@
 import "./App.css";
+import Header from "./components/Layout/Header";
 import { useTheme } from "./context/ThemeContext";
 import Landing from "./pages/Landing";
 
@@ -13,7 +14,8 @@ function App() {
       font-Poppins
     `}
     >
-      <Landing />
+      <Header />
+      {/* <Landing /> */}
     </main>
   );
 }
