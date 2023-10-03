@@ -2,8 +2,10 @@ import React from 'react'
 import Logo from '../../assets/svg/logo.svg'
 import { useTheme } from "../../context/ThemeContext";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button } from "@nextui-org/react"
-import { FaSearch, FaChevronDown, FaStore, FaUser } from 'react-icons/fa';
-import { GiMoon ,GiSun} from "react-icons/gi";
+import { FaSearch, FaChevronDown, FaStore, FaUser, FaInstagram, FaFacebook, FaTwitter, FaArrowRight, FaChevronRight } from 'react-icons/fa';
+import { GiMoon, GiSun } from "react-icons/gi";
+import { BiCategory } from "react-icons/bi";
+import { BsArrowRight } from "react-icons/bs";
 
 
 const Header = () => {
@@ -11,37 +13,112 @@ const Header = () => {
 
 
     return (
-        <Navbar maxWidth='xl' className=''>
-            <NavbarBrand>
-                <img src={Logo} alt="logo" />
-            </NavbarBrand>
+        <div>
+            <div className='flex justify-between items-center bg-primary px-5 py-2'>
+                <div className='text-white flex items-center gap-x-3'>
+                    <p className='text-xs font-semibold bg-red-600 rounded-full px-3 py-[.1rem]'>
+                        SALE
+                    </p>
 
-            <NavbarContent>
-                <Input
-                    maxWidth='full'
-                    placeholder='Searching for ....'
-                    radius='full'
-                    className='bg-transparent rounded-full -mr-10'
-                    startContent={<FaSearch className='mr-1' />}
-                />
-            </NavbarContent>
+                    <p>
+                        Free Shipping
+                    </p>
+                </div>
 
 
-            <NavbarContent justify='end'>
-                <Button radius='full' isIconOnly>
-                    <FaUser />
-                </Button>
+                <div className='text-white flex gap-x-3 text-lg'>
+                    <a href="#">
+                        <FaTwitter />
+                    </a>
 
-                <Button radius='full' isIconOnly>
-                    <FaStore />
-                </Button>
+                    <a href="#">
+                        <FaFacebook />
+                    </a>
+
+                    <a href="#">
+                        <FaInstagram />
+                    </a>
+
+                </div>
 
 
-                <Button radius='full' isIconOnly onClick={toggleTheme}>
-                    <GiMoon />
-                </Button>
-            </NavbarContent>
-        </Navbar>
+                <div className='text-white '>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+
+            <Navbar maxWidth='xl' className='bg-transparent mt-4'>
+                <NavbarBrand>
+                    <a href="#">
+                        <img src={Logo} alt="logo" />
+                    </a>
+                </NavbarBrand>
+
+
+                <NavbarContent className='relative'>
+                    <Input
+                        maxWidth='full'
+                        placeholder='Search for a product ....'
+                        radius='full'
+                        className='bg-transparent rounded-full'
+                        startContent={<FaSearch size={18} className='mr-1' />}
+                    />
+
+                    <button className='absolute right-1 bg-primary p-2 rounded-full text-white'>
+                        <BsArrowRight />
+                    </button>
+                </NavbarContent>
+
+
+                <NavbarContent justify='end'>
+                    <Button radius='full' isIconOnly>
+                        <FaUser />
+                    </Button>
+
+                    <Button radius='full' isIconOnly>
+                        <FaStore />
+                    </Button>
+
+
+                    <Button radius='full' isIconOnly onClick={toggleTheme}>
+                        <GiMoon />
+                    </Button>
+                </NavbarContent>
+            </Navbar>
+
+            <Navbar maxWidth='xl' className='bg-transparent'>
+                <NavbarBrand>
+                    <Button color='primary' variant='flat' className=''>
+                        <BiCategory size={18} />
+                        Categories
+                        <p className='ml-14'>
+                            <FaChevronRight />
+                        </p>
+                    </Button>
+                </NavbarBrand>
+
+
+                <NavbarContent justify='end'>
+                    <NavbarItem>
+                        <Link size='sm' href='#'>
+                            Home
+                        </Link>
+                    </NavbarItem>
+
+                    <NavbarItem>
+                        <Link size='sm' href='#' className='mx-3'>
+                            Pages
+                        </Link>
+                    </NavbarItem>
+
+                    <NavbarItem>
+                        <Link size='sm' href='#'>
+                            Vendor Account
+                        </Link>
+                    </NavbarItem>
+                </NavbarContent>
+            </Navbar>
+        </div>
     )
 }
 
