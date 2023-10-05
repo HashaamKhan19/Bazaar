@@ -8,16 +8,16 @@ import { RiSecurePaymentFill } from "react-icons/ri";
 
 const HeroSection = () => {
     return (
-        <div className='bg-slate-50 mt-2 h-[50%]'>
-            <div className='max-w-screen-xl mx-auto px-8 flex items-center h-full'>
+        <div className='bg-slate-50 mt-2 md:h-[50%] h-[70%]'>
+            <div className='max-w-screen-xl mx-auto px-8 flex items-center flex-col md:flex-row h-full'>
                 {/* TEXT-SECTION */}
-                <div className='flex-1 -mt-10'>
+                <div className='flex-1 text-center md:text-left mt-10 md:-mt-10'>
                     <h1 className='capitalize text-5xl font-semibold'>
                         Fashionable <br /> collection
                     </h1>
 
                     <p className='capitalize my-4'>
-                        get free shipping on all orders over $88.00.
+                        get free shipping on all <br className='md:hidden' /> orders over $88.00.
                     </p>
 
                     <div>
@@ -33,7 +33,7 @@ const HeroSection = () => {
 
 
             {/* ADVANTAGES */}
-            <div className='max-w-screen-xl mx-auto px-8'>
+            <div className='max-w-screen-xl mx-auto px-8 mb-10'>
                 <div className='cursor-pointer grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 mt-6 py-6 px-14 border border-primary-300 duration-300 hover:shadow-lg hover:shadow-primary-300 bg-slate-50 rounded'>
                     <div className='flex lg:justify-center items-center gap-x-2 w-full '>
                         <FaTruckFast size={30} />
