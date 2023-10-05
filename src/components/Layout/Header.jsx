@@ -19,7 +19,6 @@ const Header = () => {
                     <p className='text-xs font-semibold bg-red-600 rounded-full px-3 py-[.1rem]'>
                         SALE
                     </p>
-
                     <p>
                         Free Shipping
                     </p>
@@ -38,7 +37,6 @@ const Header = () => {
                     <a href="#">
                         <FaInstagram />
                     </a>
-
                 </div>
 
 
@@ -107,13 +105,13 @@ const Header = () => {
 
                     <NavbarItem>
                         <Link size='sm' href='#' className='mx-3'>
-                            Pages
+                            Products
                         </Link>
                     </NavbarItem>
 
                     <NavbarItem>
                         <Link size='sm' href='#'>
-                            Vendor Account
+                            Vendor
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
