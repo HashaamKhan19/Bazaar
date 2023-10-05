@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../../assets/svg/logo.svg'
 import { useTheme } from "../../context/ThemeContext";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button, Chip } from "@nextui-org/react"
 import { FaSearch, FaChevronDown, FaStore, FaUser, FaInstagram, FaFacebook, FaTwitter, FaArrowRight, FaChevronRight } from 'react-icons/fa';
 import { GiMoon, GiSun } from "react-icons/gi";
 import { BiCategory } from "react-icons/bi";
@@ -16,9 +16,9 @@ const Header = () => {
         <div>
             <div className='flex justify-between items-center bg-primary px-5 py-2'>
                 <div className='text-white flex items-center gap-x-3'>
-                    <p className='text-xs font-semibold bg-red-600 rounded-full px-3 py-[.1rem]'>
+                    <Chip size='sm' color='danger' className='text-xs'>
                         SALE
-                    </p>
+                    </Chip>
                     <p>
                         Free Shipping
                     </p>
