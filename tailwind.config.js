@@ -14,7 +14,17 @@ export default {
         Poppins: ["Poppins", "sans-serif"],
       },
     },
+
+    screens: {
+      xxs: "440px",
+      xs: "460px",
+      sm: "540px",
+      md: '640px',
+      lg: '1024px',
+      xl: '1280px',
+    },
   },
+
   darkMode: "class",
   plugins: [
     nextui({

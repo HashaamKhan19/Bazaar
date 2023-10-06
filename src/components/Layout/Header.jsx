@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Logo from "../../assets/svg/logo.svg";
 import { useTheme } from "../../context/ThemeContext";
 import {
@@ -7,6 +7,9 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
+  NavbarMenuItem,
+  NavbarMenu,
+  NavbarMenuToggle,
   Input,
   DropdownItem,
   DropdownTrigger,
@@ -14,6 +17,7 @@ import {
   DropdownMenu,
   Avatar,
   Button,
+  Chip,
 } from "@nextui-org/react";
 import {
   FaSearch,
@@ -28,15 +32,18 @@ import { AiOutlineUser } from "react-icons/ai";
 import { FiMoon } from "react-icons/fi";
 
 const Header = () => {
-  const { toggleTheme, isDarkMode } = useTheme();
+  const { toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = ["Home", "Products", "Vendor"];
 
   return (
-    <div>
+    <div className="mb-4 md:mb-0">
       <div className="flex justify-between items-center bg-primary px-5 py-2">
-        <div className="text-white flex items-center gap-x-3">
-          <p className="text-xs font-semibold bg-red-600 rounded-full px-3 py-[.1rem]">
+        <div className="text-white sm:flex items-center gap-x-3 hidden">
+          <Chip size="sm" color="danger" className="text-xs">
             SALE
-          </p>
+          </Chip>
           <p>Free Shipping</p>
         </div>
 
@@ -59,24 +66,24 @@ const Header = () => {
         </div>
       </div>
 
-      <Navbar maxWidth="xl" className="bg-transparent mt-4">
+      <Navbar
+        maxWidth="xl"
+        onMenuOpenChange={setIsMenuOpen}
+        className="bg-transparent mt-4"
+      >
         <NavbarBrand>
           <a href="#">
             <img src={Logo} alt="logo" />
           </a>
         </NavbarBrand>
 
-        <NavbarContent className="relative">
+        <NavbarContent className="relative -mr-11 sm:-mr-0 hidden xs:flex">
           <Input
             maxWidth="full"
             placeholder="Search for a product ...."
             radius="full"
-            className={`bg-transparent rounded-full
-                ${isDarkMode ? "" : "border border-gray-200"}
-            `}
-            startContent={
-              <FaSearch size={18} className="mr-1" color="#8c8c8c" />
-            }
+            className="bg-transparent border-2  rounded-full"
+            startContent={<FaSearch size={18} className="mr-1" />}
           />
 
           <button className="absolute right-1 bg-primary p-2 rounded-full text-white">
@@ -84,9 +91,9 @@ const Header = () => {
           </button>
         </NavbarContent>
 
-        <NavbarContent justify="end">
+        <NavbarContent justify="end" className="hidden sm:flex">
           <Button radius="full" isIconOnly>
-            <AiOutlineUser size={16} />
+            <FaUser />
           </Button>
 
           <Button radius="full" isIconOnly>
@@ -94,12 +101,30 @@ const Header = () => {
           </Button>
 
           <Button radius="full" isIconOnly onClick={toggleTheme}>
-            {isDarkMode ? <BiSun size={16} /> : <FiMoon size={16} />}
+            <GiMoon />
           </Button>
+        </NavbarContent>
+
+        <NavbarContent justify="end" className="sm:hidden">
+          {/* hamburger */}
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden"
+          />
+
+          <NavbarMenu className="mt-16">
+            {menuItems.map((item, index) => (
+              <NavbarMenuItem key={`${item}-${index}`}>
+                <Link color="foreground" className="w-full" href="#" size="lg">
+                  {item}
+                </Link>
+              </NavbarMenuItem>
+            ))}
+          </NavbarMenu>
         </NavbarContent>
       </Navbar>
 
-      <Navbar maxWidth="xl" className="bg-transparent">
+      <Navbar maxWidth="xl" className="bg-transparent hidden sm:flex">
         <NavbarBrand>
           <Button color="primary" variant="flat" className="">
             <BiCategory size={18} />

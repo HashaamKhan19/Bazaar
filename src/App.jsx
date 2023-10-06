@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Layout/Header";
+import HeroSection from "./components/Layout/HeroSection";
 import { useTheme } from "./context/ThemeContext";
 import Landing from "./pages/Landing";
 
@@ -15,6 +16,7 @@ function App() {
     `}
     >
       <Header />
+      <HeroSection />
       {/* <Landing /> */}
     </main>
   );
