@@ -52,19 +52,13 @@ const Header = () => {
             </div>
 
             <Navbar maxWidth='xl' onMenuOpenChange={setIsMenuOpen} className='bg-transparent mt-4'>
-                <NavbarMenuToggle
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="sm:hidden"
-                />
-
                 <NavbarBrand>
                     <a href="#">
                         <img src={Logo} alt="logo" />
                     </a>
                 </NavbarBrand>
 
-
-                <NavbarContent className='relative hidden sm:flex'>
+                <NavbarContent className='relative -mr-11 sm:-mr-0 hidden xs:flex'>
                     <Input
                         maxWidth='full'
                         placeholder='Search for a product ....'
@@ -77,7 +71,6 @@ const Header = () => {
                         <BsArrowRight />
                     </button>
                 </NavbarContent>
-
 
                 <NavbarContent justify='end' className='hidden sm:flex'>
                     <Button radius='full' isIconOnly>
@@ -94,20 +87,28 @@ const Header = () => {
                     </Button>
                 </NavbarContent>
 
-                <NavbarMenu className='mt-16'>
-                    {menuItems.map((item, index) => (
-                        <NavbarMenuItem key={`${item}-${index}`}>
-                            <Link
-                                color='foreground'
-                                className="w-full"
-                                href="#"
-                                size="lg"
-                            >
-                                {item}
-                            </Link>
-                        </NavbarMenuItem>
-                    ))}
-                </NavbarMenu>
+                <NavbarContent justify='end' className='sm:hidden'>
+                    {/* hamburger */}
+                    <NavbarMenuToggle
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                        className="sm:hidden"
+                    />
+
+                    <NavbarMenu className='mt-16'>
+                        {menuItems.map((item, index) => (
+                            <NavbarMenuItem key={`${item}-${index}`}>
+                                <Link
+                                    color='foreground'
+                                    className="w-full"
+                                    href="#"
+                                    size="lg"
+                                >
+                                    {item}
+                                </Link>
+                            </NavbarMenuItem>
+                        ))}
+                    </NavbarMenu>
+                </NavbarContent>
             </Navbar>
 
             <Navbar maxWidth='xl' className='bg-transparent hidden sm:flex'>

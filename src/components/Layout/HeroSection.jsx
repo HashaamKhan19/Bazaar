@@ -27,7 +27,7 @@ const HeroSection = () => {
 
                 {/* IMG-SECTION */}
                 <div className='flex-1 flex justify-end'>
-                    <img src={BagImg} alt="ShoesImg" className='h-96' />
+                    <img src={BagImg} alt="ShoesImg" className='' />
                 </div>
             </div>
 
