@@ -25,6 +25,7 @@ import {
   FaFacebook,
   FaTwitter,
   FaChevronRight,
+  FaUser,
 } from "react-icons/fa";
 import { BiCategory, BiSun } from "react-icons/bi";
 import { BsArrowRight, BsHandbag } from "react-icons/bs";
@@ -32,7 +33,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { FiMoon } from "react-icons/fi";
 
 const Header = () => {
-  const { toggleTheme } = useTheme();
+  const { toggleTheme, isDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = ["Home", "Products", "Vendor"];
@@ -82,8 +83,12 @@ const Header = () => {
             maxWidth="full"
             placeholder="Search for a product ...."
             radius="full"
-            className="bg-transparent border-2  rounded-full"
-            startContent={<FaSearch size={18} className="mr-1" />}
+            className={`bg-transparent rounded-full
+            ${isDarkMode ? "" : "border-1"}
+            `}
+            startContent={
+              <FaSearch size={18} className="mr-1" color="#8e8e8e" />
+            }
           />
 
           <button className="absolute right-1 bg-primary p-2 rounded-full text-white">
@@ -93,7 +98,7 @@ const Header = () => {
 
         <NavbarContent justify="end" className="hidden sm:flex">
           <Button radius="full" isIconOnly>
-            <FaUser />
+            <AiOutlineUser size={16} />
           </Button>
 
           <Button radius="full" isIconOnly>
@@ -101,7 +106,7 @@ const Header = () => {
           </Button>
 
           <Button radius="full" isIconOnly onClick={toggleTheme}>
-            <GiMoon />
+            {!isDarkMode ? <FiMoon size={16} /> : <BiSun size={16} />}
           </Button>
         </NavbarContent>
 
