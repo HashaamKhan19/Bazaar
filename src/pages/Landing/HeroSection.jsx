@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa6";
 import { BiTimer } from "react-icons/bi";
 import { RiSecurePaymentFill } from "react-icons/ri";
-import GenericButton from "../Button/GenericButton";
+import GenericButton from "../../components/Button/GenericButton";
 
 const HeroSection = () => {
   return (

@@ -1,8 +1,7 @@
 import "./App.css";
 import Header from "./components/Layout/Header";
-import HeroSection from "./components/Layout/HeroSection";
 import { useTheme } from "./context/ThemeContext";
-import Landing from "./pages/Landing";
+import HeroSection from "./pages/Landing/HeroSection";
 
 function App() {
   const { isDarkMode } = useTheme();
@@ -16,7 +15,6 @@ function App() {
     >
       <Header />
       <HeroSection />
-      {/* <Landing /> */}
     </main>
   );
 }
