@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTheme } from "../../context/ThemeContext";
 import ShopNowBtn from './ShopNowBtn'
 import ShoesImg from '../../assets/shoes.png'
 import BagImg from '../../assets/bag.png'
@@ -7,8 +8,10 @@ import { BiTimer } from "react-icons/bi";
 import { RiSecurePaymentFill } from "react-icons/ri";
 
 const HeroSection = () => {
+    const { toggleTheme, isDarkMode } = useTheme();
+
     return (
-        <div className='bg-slate-200 mt-2 md:h-[50%] h-[70%]'>
+        <div className={`${isDarkMode ? 'bg-[#0f0e18]' : 'bg-slate-200'} mt-2 md:h-[50%] h-[70%]`}>
             <div className='max-w-screen-xl mx-auto px-8 flex items-center flex-col md:flex-row h-full'>
                 {/* TEXT-SECTION */}
                 <div className='flex-1 text-center md:text-left mt-10 md:-mt-10'>
@@ -34,7 +37,7 @@ const HeroSection = () => {
 
             {/* ADVANTAGES */}
             <div className='max-w-screen-xl mx-auto px-8 mb-10'>
-                <div className='cursor-pointer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 py-6 px-14 border border-primary-300 duration-300 shadow-md shadow-primary-300 hover:shadow-lg hover:shadow-primary-400 bg-slate-200 rounded'>
+                <div className={`${isDarkMode ? 'bg-[#0f0e18]' : 'bg-slate-200'} cursor-pointer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 py-6 px-14 border border-primary-300 duration-300 shadow-md shadow-primary-300 hover:shadow-lg hover:shadow-primary-400 rounded`}>
                     <div className='flex lg:justify-center items-center gap-x-2 w-full '>
                         <FaTruckFast size={30} />
                         <div>
