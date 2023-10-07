@@ -86,7 +86,7 @@ const Header = () => {
 
 
                     <Button radius='full' isIconOnly onClick={toggleTheme}>
-                        <FiMoon />
+                        {!isDarkMode ? <BsMoonStars size={16} /> : <FiSun size={16} />}
                     </Button>
                 </NavbarContent>
 
