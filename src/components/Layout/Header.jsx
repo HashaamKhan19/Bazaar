@@ -1,17 +1,20 @@
 import { React, useState } from 'react'
 import Logo from '../../assets/svg/logo.svg'
 import { useTheme } from "../../context/ThemeContext";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button, Chip } from "@nextui-org/react"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuItem, NavbarMenu, NavbarMenuToggle, Input, Button, Chip, Switch } from "@nextui-org/react"
 import { FaSearch, FaInstagram, FaFacebook, FaTwitter, FaChevronRight } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
-import { BsArrowRight, BsHandbag, BsMoonStars } from "react-icons/bs";
+import { BsArrowRight, BsHandbag, BsMoon, BsSun } from "react-icons/bs";
 import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
+import { RiShoppingBagLine } from "react-icons/ri";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 
 
 const Header = () => {
     const { toggleTheme, isDarkMode } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const menuItems = [
         { text: 'Home', icon: <AiOutlineHome size={20} /> },
@@ -61,7 +64,8 @@ const Header = () => {
                     </a>
                 </NavbarBrand>
 
-                <NavbarContent className='relative -mr-11 sm:-mr-0 hidden xs:flex'>
+                {/* Input field */}
+                <NavbarContent className='relative -mr-11 sm:-mr-0 hidden sm:flex'>
                     <Input
                         maxWidth='full'
                         placeholder='Search for a product ....'
@@ -75,27 +79,67 @@ const Header = () => {
                     </button>
                 </NavbarContent>
 
+                {/* BTNs: User, Store, DarkMode */}
                 <NavbarContent justify='end' className='hidden sm:flex'>
-                    <Button radius='full' isIconOnly>
-                        <AiOutlineUser />
-                    </Button>
+                    <Switch
+                        onClick={toggleTheme}
+                        startContent={<BsSun size={16} />}
+                        endContent={<BsMoon size={16} />}
+                    />
 
-                    <Button radius='full' isIconOnly>
-                        <BsHandbag />
-                    </Button>
+                    <button className={`cursor-pointer p-2 rounded-full -mr-6 -ml-4 ${isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-primary-100'} `}>
+                        <AiOutlineUser size={24} />
+                    </button>
 
-
-                    <Button radius='full' isIconOnly onClick={toggleTheme}>
-                        {!isDarkMode ? <BsMoonStars size={16} /> : <FiSun size={16} />}
-                    </Button>
+                    <button className={`cursor-pointer p-2 rounded-full  ${isDarkMode ? 'hover:bg-gray-800' : 'hover:bg-primary-100'} bg`}>
+                        <RiShoppingBagLine size={24} />
+                    </button>
                 </NavbarContent>
 
 
                 {/* hamburger */}
                 <NavbarContent justify='end' className='sm:hidden'>
-                    <p onClick={toggleTheme}>
-                        {!isDarkMode ? <BsMoonStars size={18} /> : <FiSun size={20} />}
-                    </p>
+                    {/* searchBar */}
+                    <Button onPress={onOpen} isIconOnly className='rounded-full p-0 bg-transparent'>
+                        <FiSearch size={22} />
+                    </Button>
+                    <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center' className='font-Poppins'>
+                        <ModalContent>
+                            {() => (
+                                <div>
+                                    <ModalHeader className="flex flex-col gap-1">
+                                        {/* title goes here */}
+                                    </ModalHeader>
+                                    <ModalBody className='relative'>
+                                        {/* Input field */}
+                                        <Input
+                                            maxWidth='full'
+                                            placeholder='Search for a product ....'
+                                            radius='full'
+                                            className='bg-transparent rounded-full'
+                                            startContent={<FaSearch size={18} className='mr-1' />}
+                                        />
+
+                                        <button className='absolute right-7 top-[.9rem] bg-primary p-2 rounded-full text-white'>
+                                            <BsArrowRight />
+                                        </button>
+                                    </ModalBody>
+                                    <ModalFooter>
+
+                                    </ModalFooter>
+                                </div>
+                            )}
+                        </ModalContent>
+                    </Modal>
+
+
+                    {/* DarkMode Toggle */}
+                    <Switch
+                        onClick={toggleTheme}
+                        startContent={<BsSun size={16} />}
+                        endContent={<BsMoon size={16} />}
+                        className='-mr-2 -ml-1'
+                    />
 
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -103,17 +147,20 @@ const Header = () => {
                     />
 
                     <NavbarMenu className={`mt-16 ${isDarkMode ? 'bg-black' : ''}`}>
+
+                        {/* links */}
                         {menuItems.map((item, index) => (
                             <NavbarMenuItem key={`${item}-${index}`}>
                                 <Link
                                     color='foreground'
-                                    className="w-full font-Poppins bg-primary-200 rounded pl-4 py-2 flex items-center gap-x-2"
+                                    className="w-full mb-2 font-Poppins bg-primary-200 rounded pl-4 py-2 flex items-center gap-x-2"
                                     href="#"
                                     size="lg"
                                 >
                                     {item.icon}
                                     {item.text}
                                 </Link>
+
                             </NavbarMenuItem>
                         ))}
                     </NavbarMenu>
