@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import React from "react";
 
