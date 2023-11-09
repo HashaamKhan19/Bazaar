@@ -5,6 +5,8 @@ import { useTheme } from "./context/ThemeContext";
 import Landing from "./pages/Landing";
 import BestSellingCategories from "./pages/Landing/SellingCategories";
 import SellingProducts from "./pages/Landing/SellingProducts";
+import Cta from "./pages/Landing/Cta";
+import Footer from "./components/Layout/Footer";
 
 function App() {
   const { isDarkMode } = useTheme();
@@ -21,6 +23,8 @@ function App() {
       <HeroSection />
       <BestSellingCategories />
       <SellingProducts />
+      <Cta />
+      <Footer />
       {/* <Landing /> */}
     </main>
   );

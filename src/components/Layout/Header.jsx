@@ -103,7 +103,9 @@ const Header = () => {
                     <Button onPress={onOpen} isIconOnly className='rounded-full p-0 bg-transparent'>
                         <FiSearch size={22} />
                     </Button>
-                    <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center' className='font-Poppins'>
+                    <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center'
+                        className={`${isDarkMode ? 'bg-[#0f0e18]' : 'bg-slate-200'} font-Poppins`}
+                    >
                         <ModalContent>
                             {() => (
                                 <div>
@@ -116,11 +118,16 @@ const Header = () => {
                                             maxWidth='full'
                                             placeholder='Search for a product ....'
                                             radius='full'
-                                            className='bg-transparent rounded-full'
+                                            className={`
+                                                ${isDarkMode ? 'border-none' : 'border-2'}
+                                                ${isDarkMode ? "dark" : "light"}
+                                                h-full font-normal text-default-500
+                                                text-sm
+                                                rounded-full`}
                                             startContent={<FaSearch size={18} className='mr-1' />}
                                         />
 
-                                        <button className='absolute right-7 top-[.9rem] bg-primary p-2 rounded-full text-white'>
+                                        <button className={`${isDarkMode ? 'top-3' : 'top-[.9rem]'} ${isDarkMode ? 'right-7' : 'right-[1.80rem]'} absolute bg-primary p-2 rounded-full text-white`}>
                                             <BsArrowRight />
                                         </button>
                                     </ModalBody>
@@ -153,7 +160,11 @@ const Header = () => {
                             <NavbarMenuItem key={`${item}-${index}`}>
                                 <Link
                                     color='foreground'
-                                    className="w-full mb-2 font-Poppins bg-primary-200 rounded pl-4 py-2 flex items-center gap-x-2"
+                                    className={`
+                                                ${isDarkMode ? 'bg-[#0f0e18]' : 'bg-primary-200'} 
+                                                ${isDarkMode ? 'text-primary-200' : ''} 
+                                                w-full mb-2 font-Poppins rounded pl-4 py-2 flex items-center gap-x-2
+                                    `}
                                     href="#"
                                     size="lg"
                                 >

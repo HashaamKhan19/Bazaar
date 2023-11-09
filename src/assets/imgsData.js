@@ -13,6 +13,7 @@ import mensFashion from './imgs/mensFashion.jpg'
 import womensFashion from './imgs/womensFashion.jpg'
 import shoes from './imgs/shoes.png'
 import winterHats from './imgs/winterHats.jpg'
+import winterCloths from './imgs/winterCloths.webp'
 
 
 export {
@@ -31,4 +32,5 @@ export {
     mensFashion,
     womensFashion,
     shoes,
+    winterCloths,
 }
