@@ -1,12 +1,11 @@
-import "./App.css";
+import Footer from "./components/Layout/Footer";
 import Header from "./components/Layout/Header";
-import HeroSection from "./pages/Landing/HeroSection";
 import { useTheme } from "./context/ThemeContext";
 import Landing from "./pages/Landing";
+import Cta from "./pages/Landing/Cta";
+import HeroSection from "./pages/Landing/HeroSection";
 import BestSellingCategories from "./pages/Landing/SellingCategories";
 import SellingProducts from "./pages/Landing/SellingProducts";
-import Cta from "./pages/Landing/Cta";
-import Footer from "./components/Layout/Footer";
 
 function App() {
   const { isDarkMode } = useTheme();

@@ -18,7 +18,7 @@ import {
   Switch,
   useDisclosure,
 } from "@nextui-org/react";
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiCategory } from "react-icons/bi";
 import { BsArrowRight, BsHandbag, BsMoon, BsSun } from "react-icons/bs";
@@ -38,6 +38,23 @@ const Header = () => {
   const { toggleTheme, isDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const menuItems = [
     { text: "Home", icon: <AiOutlineHome size={20} /> },
@@ -47,8 +64,12 @@ const Header = () => {
   ];
 
   return (
-    <div className="mb-4 md:mb-0">
-      <div className="flex justify-between items-center bg-primary px-5 py-2">
+    <div className={`mb-4 md:mb-0 sticky top-0 left-0 right-0 z-20 `}>
+      <div
+        className={`${
+          isScroll ? "hidden" : "flex"
+        } justify-between items-center bg-primary px-5 py-2 `}
+      >
         <div className="text-white sm:flex items-center gap-x-3 hidden">
           <Chip size="sm" color="danger" className="text-xs">
             SALE
@@ -78,7 +99,8 @@ const Header = () => {
       <Navbar
         maxWidth="xl"
         onMenuOpenChange={setIsMenuOpen}
-        className="bg-transparent mt-4"
+        isBlurred="false"
+        className={`${isDarkMode ? "bg-black" : "bg-white"} pt-4`}
       >
         <NavbarBrand>
           <a href="#">
@@ -112,17 +134,15 @@ const Header = () => {
           />
 
           <button
-            className={`cursor-pointer p-2 rounded-full -mr-6 -ml-4 ${
-              isDarkMode ? "hover:bg-gray-800" : "hover:bg-primary-100"
-            } `}
+            className={`cursor-pointer p-2 rounded-full  -mr-4 
+            ${isDarkMode ? "hover:bg-gray-800" : "hover:bg-primary-100"} `}
           >
             <AiOutlineUser size={24} />
           </button>
 
           <button
-            className={`cursor-pointer p-2 rounded-full  ${
-              isDarkMode ? "hover:bg-gray-800" : "hover:bg-primary-100"
-            }`}
+            className={`cursor-pointer p-2 rounded-full  
+            ${isDarkMode ? "hover:bg-gray-800" : "hover:bg-primary-100"}`}
           >
             <RiShoppingBagLine size={24} />
           </button>
@@ -132,7 +152,7 @@ const Header = () => {
         <NavbarContent justify="end" className="sm:hidden">
           {/* searchBar */}
           <Button
-            onPress={onOpen}
+            onClick={onOpen}
             isIconOnly
             className="rounded-full p-0 bg-transparent"
           >
@@ -193,7 +213,11 @@ const Header = () => {
             className="sm:hidden"
           />
 
-          <NavbarMenu className={`mt-16 ${isDarkMode ? "bg-black" : ""}`}>
+          <NavbarMenu
+            className={` ${isScroll ? "mt-4" : "mt-16"} ${
+              isDarkMode ? "bg-black" : ""
+            }`}
+          >
             {/* links */}
             {menuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
@@ -216,7 +240,15 @@ const Header = () => {
         </NavbarContent>
       </Navbar>
 
-      <Navbar maxWidth="xl" className="bg-transparent hidden sm:flex">
+      <Navbar
+        maxWidth="xl"
+        isBlurred="false"
+        className={`
+        ${isDarkMode ? "bg-black" : "bg-white"}  
+        ${isDarkMode ? "shadow-sm shadow-primary/30" : ""}  
+        ${isScroll ? "shadow-md" : "shadow-none"}  
+        hidden sm:flex`}
+      >
         <NavbarBrand>
           <Button color="primary" variant="flat" className="">
             <BiCategory size={18} />
@@ -227,21 +259,31 @@ const Header = () => {
           </Button>
         </NavbarBrand>
 
-        <NavbarContent justify="end">
-          <NavbarItem>
+        <NavbarContent justify="end" className="font-medium">
+          <NavbarItem isActive>
             <Link size="sm" href="#">
               Home
             </Link>
           </NavbarItem>
 
           <NavbarItem>
-            <Link size="sm" href="#" className="mx-3">
+            <Link
+              size="sm"
+              href="#"
+              className={`mx-3 ${
+                isDarkMode ? "text-white" : "text-[#495057]"
+              }`}
+            >
               Products
             </Link>
           </NavbarItem>
 
           <NavbarItem>
-            <Link size="sm" href="#">
+            <Link
+              size="sm"
+              href="#"
+              className={`${isDarkMode ? "text-white" : "text-[#495057]"}`}
+            >
               Vendor
             </Link>
           </NavbarItem>

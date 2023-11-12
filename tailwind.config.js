@@ -16,12 +16,12 @@ export default {
     },
 
     screens: {
-      xxs: "440px",
+      xxs: "300px",
       xs: "460px",
       sm: "540px",
-      md: '640px',
-      lg: '1024px',
-      xl: '1280px',
+      md: "640px",
+      lg: "1024px",
+      xl: "1280px",
     },
   },
 

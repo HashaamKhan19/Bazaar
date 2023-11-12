@@ -80,3 +80,35 @@ export const sellingProductsData = [
     desc: "winterHats",
   },
 ];
+
+export const categoriesData = [
+  {
+    id: 1,
+    title: "Men Fashion",
+    description: "Always dress well, keep it simple but significant",
+    image: mensFashion,
+    price: "starting at $29",
+  },
+  {
+    id: 2,
+    title: "Women Fashion",
+    description:
+      "If shopping doesn't make you happy, then you're in the wrong shop",
+    image: womensFashion,
+    price: "25% off on first two products",
+  },
+  {
+    id: 3,
+    title: "Gadjets",
+    description: "dreams about the future are always filled with the gadjets",
+    image: gadjets,
+    price: "Warrenty confirmed",
+  },
+  {
+    id: 4,
+    title: "Cosmetics",
+    description: "Women!, Escape the reality",
+    image: cosmetics,
+    price: "Buy one get one free",
+  },
+];
