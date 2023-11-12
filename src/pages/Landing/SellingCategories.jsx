@@ -23,4 +23,4 @@ const BestSellingCategories = () => {
   );
 };
 
-export default BestSellingCategories;
+export default BestSellingCategories

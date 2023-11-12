@@ -19,7 +19,7 @@ const HeroSection = () => {
         <div className="max-w-screen-xl mx-auto px-8 flex items-center flex-col md:flex-row h-full">
           {/* TEXT-SECTION */}
           <div className="flex-1 text-center md:text-left mt-10 md:-mt-10">
-            <h1 className="capitalize sm:text-5xl text-4xl font-semibold">  
+            <h1 className="capitalize sm:text-5xl text-4xl font-semibold">
               Fashionable <br /> collection
             </h1>
 

@@ -173,15 +173,15 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-x-4 text-lg ">
-            <a className={`${isDarkMode ? "hover:text-white/80" : "hover:text-black/70"}`} href="">
+            <a className="hover:text-white/80" href="">
               <FaXTwitter />
             </a>
 
-            <a className={`${isDarkMode ? "hover:text-white/80" : "hover:text-black/70"}`} href="">
+            <a className="hover:text-white/80" href="">
               <FaFacebook />
             </a>
 
-            <a className={`${isDarkMode ? "hover:text-white/80" : "hover:text-black/70"}`} href="">
+            <a className="hover:text-white/80" href="">
               <FaInstagram />
             </a>
           </div>
