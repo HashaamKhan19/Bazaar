@@ -18,6 +18,10 @@ function App() {
     >
       <Header />
       <HeroSection />
+      <BestSellingCategories />
+      <SellingProducts />
+      <Cta />
+      <Footer />
       {/* <Landing /> */}
     </main>
   );
