@@ -178,15 +178,15 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-x-4 text-lg ">
-            <a className="hover:text-white/80" href="">
+            <a className="hover:text-black/80" href="">
               <FaXTwitter />
             </a>
 
-            <a className="hover:text-white/80" href="">
+            <a className="hover:text-black/80" href="">
               <FaFacebook />
             </a>
 
-            <a className="hover:text-white/80" href="">
+            <a className="hover:text-black/80" href="">
               <FaInstagram />
             </a>
           </div>
