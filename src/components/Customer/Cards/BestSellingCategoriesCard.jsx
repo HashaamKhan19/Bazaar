@@ -2,7 +2,7 @@
 import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import React from "react";
 
-const SellingCategoriesCard = ({
+const BestSellingCategoriesCard = ({
   title,
   description,
   image,
@@ -41,4 +41,4 @@ const SellingCategoriesCard = ({
   );
 };
 
-export default SellingCategoriesCard;
+export default BestSellingCategoriesCard;

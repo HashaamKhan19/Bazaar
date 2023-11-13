@@ -1,6 +1,6 @@
 import React from "react";
-import SellingCategoriesCard from "../../components/Cards/SellingCategoriesCard.jsx";
-import { categoriesData } from "../../constants";
+import { categoriesData } from "../../../constants";
+import BestSellingCategoriesCard from "../../../components/Customer/Cards/BestSellingCategoriesCard";
 
 const BestSellingCategories = () => {
   return (
@@ -10,7 +10,7 @@ const BestSellingCategories = () => {
       </h2>
       <div className="px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 sm:gap-y-6 sm:gap-x-6 max-w-screen-xl mx-auto">
         {categoriesData.map((item) => (
-          <SellingCategoriesCard
+          <BestSellingCategoriesCard
             key={item.id}
             title={item.title}
             description={item.description}
@@ -23,4 +23,4 @@ const BestSellingCategories = () => {
   );
 };
 
-export default BestSellingCategories
+export default BestSellingCategories;

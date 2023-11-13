@@ -1,11 +1,10 @@
-import Footer from "./components/Layout/Footer";
-import Header from "./components/Layout/Header";
 import { useTheme } from "./context/ThemeContext";
-import Landing from "./pages/Landing";
-import Cta from "./pages/Landing/Cta";
-import HeroSection from "./pages/Landing/HeroSection";
-import BestSellingCategories from "./pages/Landing/SellingCategories";
-import SellingProducts from "./pages/Landing/SellingProducts";
+import HeroSection from "./pages/Customer/Landing/HeroSection";
+import Cta from "./pages/Customer/Landing/Cta";
+import Header from "./components/Customer/Layout/Header";
+import Footer from "./components/Customer/Layout/Footer";
+import BestSellingCategories from "./pages/Customer/Landing/SellingCategories";
+import SellingProducts from "./pages/Customer/Landing/SellingProducts";
 
 function App() {
   const { isDarkMode } = useTheme();

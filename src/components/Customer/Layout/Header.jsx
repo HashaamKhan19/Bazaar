@@ -31,8 +31,8 @@ import {
 } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { RiShoppingBagLine } from "react-icons/ri";
-import Logo from "../../assets/svg/logo.svg";
-import { useTheme } from "../../context/ThemeContext";
+import Logo from "../../../assets/svg/logo.svg";
+import { useTheme } from "../../../context/ThemeContext";
 
 const Header = () => {
   const { toggleTheme, isDarkMode } = useTheme();
@@ -68,7 +68,7 @@ const Header = () => {
       <div
         className={`${
           isScroll ? "hidden" : "flex"
-        } justify-between items-center bg-primary px-5 py-2 `}
+        } justify-between items-center bg-primary px-5 py-2`}
       >
         <div className="text-white sm:flex items-center gap-x-3 hidden">
           <Chip size="sm" color="danger" className="text-xs">
@@ -270,9 +270,7 @@ const Header = () => {
             <Link
               size="sm"
               href="#"
-              className={`mx-3 ${
-                isDarkMode ? "text-white" : "text-[#495057]"
-              }`}
+              className={`mx-3 ${isDarkMode ? "text-white" : "text-[#495057]"}`}
             >
               Products
             </Link>

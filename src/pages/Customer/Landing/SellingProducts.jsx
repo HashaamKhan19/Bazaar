@@ -2,9 +2,9 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { sellingProductsData } from "../../constants";
-import { useTheme } from "../../context/ThemeContext";
-import SellingProductsCard from "../../components/Cards/SellingProductsCard";
+import { sellingProductsData } from "../../../constants";
+import { useTheme } from "../../../context/ThemeContext";
+import BestSellingProductsCard from "../../../components/Customer/Cards/BestSellingProductsCard";
 
 const CarouselSP = () => {
   const { toggleTheme, isDarkMode } = useTheme();
@@ -46,7 +46,7 @@ const CarouselSP = () => {
         <div className="embla__container flex whitespace-nowrap ">
           {sellingProductsData.map((product, key) => (
             <div key={key} className="w-[400px] h-[350px]">
-              <SellingProductsCard
+              <BestSellingProductsCard
                 image={product.image}
                 title={product.title}
                 desc={product.desc}
@@ -59,7 +59,6 @@ const CarouselSP = () => {
 
       <button className="embla__next" onClick={scrollNext}>
         <FaChevronRight
-          // size={40}
           className={`
           ${isDarkMode ? "bg-white/60" : "bg-black/60"}
           ${isDarkMode ? "text-black" : "text-white"}

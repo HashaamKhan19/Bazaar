@@ -1,7 +1,7 @@
 import React from "react";
-import { useTheme } from "../../context/ThemeContext";
-import logo from "../../assets/svg/logo.svg";
+import logo from "../../../assets/svg/logo.svg";
 import { FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
+import { useTheme } from "../../../context/ThemeContext";
 
 const Footer = () => {
   const { toggleTheme, isDarkMode } = useTheme();
@@ -18,16 +18,19 @@ const Footer = () => {
                 isDarkMode ? "text-white/70" : "text-black/50"
               } text-sm mt-2 max-w-xs`}
             >
-              Shop now to revamp your outdoor space into a stunning oasis with
-              our all in one gardening solution
+              Shop from us and revamp your wardrobe with trendy and stylish{" "}
+              outfits. Choose from a wide range of dresses, tops, tees, <br />
+              bottoms, and more.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-3 grid-cols-1 gap-x-8 gap-y-5 flex-1 mt-10 lg:mt-0">
             <div>
-              <h3 className="text-lg capitalize font-bold mb-1">about us</h3>
+              <h3 className="text-lg capitalize font-semibold mb-1">
+                about us
+              </h3>
 
-              <li className="capitalize text-sm list-none mt-1">
+              <li className="capitalize text-sm list-none mt-3">
                 <a
                   className={`${
                     isDarkMode ? "text-white/70" : "text-black/50"
@@ -80,11 +83,11 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="text-lg capitalize font-bold mb-1">
+              <h3 className="text-lg capitalize font-semibold mb-1">
                 Help & Support
               </h3>
 
-              <li className="capitalize text-sm list-none mt-1">
+              <li className="capitalize text-sm list-none mt-3">
                 <a
                   className={`${
                     isDarkMode ? "text-white/70" : "text-black/50"
@@ -127,9 +130,11 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="text-lg capitalize font-bold mb-1">contact us</h3>
+              <h3 className="text-lg capitalize font-semibold mb-1">
+                contact us
+              </h3>
 
-              <li className="capitalize text-sm list-none mt-1">
+              <li className="capitalize text-sm list-none mt-3">
                 <a
                   className={`${
                     isDarkMode ? "text-white/70" : "text-black/50"
@@ -146,7 +151,7 @@ const Footer = () => {
                   } hover:underline`}
                   href="#"
                 >
-                  example@gmail.com
+                  bazaar@gmail.com
                 </a>
               </li>
               <li className="capitalize text-sm list-none mt-1">
@@ -169,7 +174,7 @@ const Footer = () => {
               isDarkMode ? "text-white/70" : "text-black/50"
             } text-sm`}
           >
-            © 2023 floragenic.dev. All rights reserved.
+            © 2023 bazaar.dev. All rights reserved.
           </p>
 
           <div className="flex gap-x-4 text-lg ">

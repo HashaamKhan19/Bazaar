@@ -1,6 +1,6 @@
 import React from "react";
-import { winterCloths } from "../../assets/imgsData.js";
-import GenericButton from "../../components/Button/GenericButton.jsx";
+import { winterCloths } from "../../../assets/imgsData.js";
+import GenericButton from "../../../components/Customer/Button/GenericButton.jsx";
 
 const Cta = () => {
   return (

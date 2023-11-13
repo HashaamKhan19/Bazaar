@@ -1,9 +1,8 @@
 import { Button, Card, CardFooter, Image } from "@nextui-org/react";
 import React from "react";
 
-
 // eslint-disable-next-line react/prop-types
-const SellingProductsCard = ({ image, title, desc, price, ...props }) => {
+const BestSellingProductsCard = ({ image, title, desc, price, ...props }) => {
   return (
     <div>
       <Card
@@ -33,9 +32,8 @@ const SellingProductsCard = ({ image, title, desc, price, ...props }) => {
           </Button>
         </CardFooter>
       </Card>
-      ;
     </div>
   );
 };
 
-export default SellingProductsCard;
+export default BestSellingProductsCard;
