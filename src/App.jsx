@@ -1,13 +1,9 @@
 import { useTheme } from "./context/ThemeContext";
-import HeroSection from "./pages/Customer/Landing/HeroSection";
-import Cta from "./pages/Customer/Landing/Cta";
-import Header from "./components/Customer/Layout/Header";
-import Footer from "./components/Customer/Layout/Footer";
-import BestSellingCategories from "./pages/Customer/Landing/SellingCategories";
-import SellingProducts from "./pages/Customer/Landing/SellingProducts";
+import LandingPage from "./pages/Customer/Landing";
 
 function App() {
   const { isDarkMode } = useTheme();
+
   return (
     <main
       className={`${isDarkMode ? "dark" : "light"}
@@ -17,13 +13,7 @@ function App() {
       font-Poppins
     `}
     >
-      <Header />
-      <HeroSection />
-      <BestSellingCategories />
-      <SellingProducts />
-      <Cta />
-      <Footer />
-      {/* <Landing /> */}
+      <LandingPage />
     </main>
   );
 }

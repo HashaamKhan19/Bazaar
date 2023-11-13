@@ -6,7 +6,7 @@ import { sellingProductsData } from "../../../constants";
 import { useTheme } from "../../../context/ThemeContext";
 import BestSellingProductsCard from "../../../components/Customer/Cards/BestSellingProductsCard";
 
-const CarouselSP = () => {
+const BestSellingProducts = () => {
   const { toggleTheme, isDarkMode } = useTheme();
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -70,4 +70,4 @@ const CarouselSP = () => {
   );
 };
 
-export default CarouselSP;
+export default BestSellingProducts;
