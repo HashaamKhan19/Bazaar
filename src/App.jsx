@@ -1,8 +1,10 @@
-import "./App.css";
-import Header from "./components/Layout/Header";
-import HeroSection from "./components/Layout/HeroSection";
 import { useTheme } from "./context/ThemeContext";
-import Landing from "./pages/Landing";
+import HeroSection from "./pages/Customer/Landing/HeroSection";
+import Cta from "./pages/Customer/Landing/Cta";
+import Header from "./components/Customer/Layout/Header";
+import Footer from "./components/Customer/Layout/Footer";
+import BestSellingCategories from "./pages/Customer/Landing/SellingCategories";
+import SellingProducts from "./pages/Customer/Landing/SellingProducts";
 
 function App() {
   const { isDarkMode } = useTheme();
@@ -10,12 +12,16 @@ function App() {
     <main
       className={`${isDarkMode ? "dark" : "light"}
       ${isDarkMode ? "bg-foreground" : "bg-background"}
-      h-screen
+      min-h-screen
       font-Poppins
     `}
     >
       <Header />
       <HeroSection />
+      <BestSellingCategories />
+      <SellingProducts />
+      <Cta />
+      <Footer />
       {/* <Landing /> */}
     </main>
   );
