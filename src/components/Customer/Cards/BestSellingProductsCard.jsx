@@ -1,37 +1,28 @@
-import { Button, Card, CardFooter, Image } from "@nextui-org/react";
 import React from "react";
+import { useTheme } from "../../../context/ThemeContext";
 
 // eslint-disable-next-line react/prop-types
 const BestSellingProductsCard = ({ image, title, desc, price, ...props }) => {
+  const { toggleTheme, isDarkMode } = useTheme();
+
   return (
-    <div>
-      <Card
-        isFooterBlurred
-        className="embla__slide mx-3 h-[350px] w-[250px] xs:w-[300px] sm:w-[300px] md:w-[340px] lg:w-[286px]"
-      >
-        <Image
-          isZoomed
-          removeWrapper
-          alt="Relaxing app background"
-          className="z-0 w-full h-full object-cover cursor-pointer"
+    <div className="">
+      <div className="embla__slide mx-3 h-[300px] w-[290px]">
+        <img
           src={image}
+          alt="image"
+          className={`${isDarkMode ? "bg-[#0f0e18]" : "bg-[#e3e9ef]"}
+          ${isDarkMode ? "opacity-90" : "opacity-100"}
+            w-full h-full object-cover cursor-pointer`}
         />
-        <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-          <div className="flex flex-grow gap-2 items-center">
-            <div className="flex flex-col">
-              <h4 className="text-tiny text-white/60 capitalize font-bold">
-                {title}
-              </h4>
-              <p className="text-white/90 font-medium text-xl capitalize">
-                {desc}
-              </p>
-            </div>
-          </div>
-          <Button radius="full" color="primary" size="sm">
-            {price}
-          </Button>
-        </CardFooter>
-      </Card>
+      </div>
+
+      {/* for text  */}
+      <div className="flex flex-col text-center capitalize mt-2 ">
+        <h3 className="text-black/40 text-sm">{title}</h3>
+        <p className="font-semibold">{desc}</p>
+        <p>{price}</p>
+      </div>
     </div>
   );
 };
