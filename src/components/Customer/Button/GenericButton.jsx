@@ -9,12 +9,14 @@ const GenericButton = ({
   radius,
   size,
   isIconOnly,
+  variant,
   ...props
 }) => {
   return (
     <Button
       color={color}
       className={className}
+      variant={variant}
       radius={radius}
       size={size}
       isIconOnly={isIconOnly}

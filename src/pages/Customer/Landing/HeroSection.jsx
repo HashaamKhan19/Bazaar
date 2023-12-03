@@ -41,13 +41,13 @@ const HeroSection = () => {
       </div>
 
       {/* ADVANTAGES */}
-      <div className="max-w-screen-xl mx-auto px-8 my-16">
+      <div className="max-w-screen-xl mx-auto px-8 mt-16 mb-20">
         <div
           className={`${
             isDarkMode ? "bg-[#0f0e18]" : "bg-slate-200"
-          } cursor-pointer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 py-6 px-14 border border-primary-300 duration-300 shadow-sm shadow-primary-300 hover:shadow-md hover:shadow-primary-400 rounded`}
+          } cursor-pointer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 py-8 px-14 border border-primary-100 duration-300 shadow-sm shadow-primary-300 hover:shadow-md hover:shadow-primary-400 rounded`}
         >
-          <div className="flex lg:justify-center items-center gap-x-2 w-full ">
+          <div className="flex lg:justify-center items-center gap-x-2 w-full">
             <FaTruckFast size={30} />
             <div>
               <h2 className="capitalize">fast delivery</h2>

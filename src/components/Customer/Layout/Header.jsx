@@ -33,6 +33,7 @@ import { FiSearch } from "react-icons/fi";
 import { RiShoppingBagLine } from "react-icons/ri";
 import Logo from "../../../assets/svg/logo.svg";
 import { useTheme } from "../../../context/ThemeContext";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Header = () => {
   const { toggleTheme, isDarkMode } = useTheme();
@@ -79,7 +80,7 @@ const Header = () => {
 
         <div className="text-white flex gap-x-3 text-lg">
           <a href="#">
-            <FaTwitter />
+            <FaXTwitter />
           </a>
 
           <a href="#">

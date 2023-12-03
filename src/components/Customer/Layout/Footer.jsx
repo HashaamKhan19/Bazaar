@@ -1,6 +1,6 @@
 import React from "react";
+import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import logo from "../../../assets/svg/logo.svg";
-import { FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
 import { useTheme } from "../../../context/ThemeContext";
 
 const Footer = () => {
@@ -178,15 +178,30 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-x-4 text-lg ">
-            <a className="hover:text-white/80" href="">
+            <a
+              className={`${
+                isDarkMode ? "hover:text-white/70" : "hover:text-black/50"
+              }`}
+              href=""
+            >
               <FaXTwitter />
             </a>
 
-            <a className="hover:text-white/80" href="">
+            <a
+              className={`${
+                isDarkMode ? "hover:text-white/70" : "hover:text-black/50"
+              }`}
+              href=""
+            >
               <FaFacebook />
             </a>
 
-            <a className="hover:text-white/80" href="">
+            <a
+              className={`${
+                isDarkMode ? "hover:text-white/70" : "hover:text-black/50"
+              }`}
+              href=""
+            >
               <FaInstagram />
             </a>
           </div>
