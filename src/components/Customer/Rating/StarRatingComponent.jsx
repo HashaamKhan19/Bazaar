@@ -15,6 +15,7 @@ const StarRatingComponent = ({
         size={size}
         SVGclassName={SVGclassName}
         transition={transition}
+        readonly
       />
     </div>
   );
