@@ -1,6 +1,5 @@
-import Aio from "./Aio";
+import RoutesConf from "./Routes";
 import { useTheme } from "./context/ThemeContext";
-import LandingPage from "./pages/Landing/LandingPage";
 
 function App() {
   const { isDarkMode } = useTheme();
@@ -14,7 +13,7 @@ function App() {
       font-Poppins
     `}
     >
-      <Aio />
+      <RoutesConf />
     </main>
   );
 }
