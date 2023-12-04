@@ -1,8 +1,8 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useEffect } from "react";
-import BestSellingCategoriesCard from "../../../components/Customer/Cards/BestSellingCategoriesCard";
-import { categoriesData } from "../../../constants";
+import BestSellingCategoriesCard from "../../components/Customer/Cards/BestSellingCategoriesCard";
+import { categoriesData } from "../../constants/landingPageData";
 
 const BestSellingCategories = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [

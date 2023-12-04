@@ -1,6 +1,5 @@
 import React from "react";
 import { useTheme } from "../../../context/ThemeContext";
-import StarRating from "../../../pages/Customer/Landing/StarRating";
 import StarRatingComponent from "../Rating/StarRatingComponent";
 
 // eslint-disable-next-line react/prop-types
@@ -26,8 +25,8 @@ const BestSellingProductsCard = ({ image, title, desc, price, ...props }) => {
       </div>
 
       {/* Rating */}
-      <div>
-        <StarRating />
+      <div className="flex justify-center">
+        <StarRatingComponent iconsCount={5} size={25} transition={true} />
       </div>
     </div>
   );
