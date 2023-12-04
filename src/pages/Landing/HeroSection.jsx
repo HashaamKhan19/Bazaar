@@ -1,10 +1,10 @@
 import React from "react";
-import { shoes, bag } from "../../../assets/imgsData.js";
+import { shoes, bag } from "../../assets/imgsData.js";
 import { FaMoneyBill, FaTruckFast } from "react-icons/fa6";
 import { BiTimer } from "react-icons/bi";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { Button } from "@nextui-org/react";
-import { useTheme } from "../../../context/ThemeContext.jsx";
+import { useTheme } from "../../context/ThemeContext.jsx";
 
 const HeroSection = () => {
   const { toggleTheme, isDarkMode } = useTheme();

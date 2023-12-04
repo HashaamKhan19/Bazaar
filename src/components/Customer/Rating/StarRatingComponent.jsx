@@ -2,18 +2,13 @@
 import React from "react";
 import { Rating } from "react-simple-star-rating";
 
-const StarRatingComponent = ({
-  iconsCount,
-  size,
-  SVGclassName,
-  transition,
-}) => {
+const StarRatingComponent = ({ iconsCount, size, transition }) => {
   return (
     <div>
       <Rating
         iconsCount={iconsCount}
         size={size}
-        SVGclassName={SVGclassName}
+        SVGclassName={`inline-block`}
         transition={transition}
       />
     </div>

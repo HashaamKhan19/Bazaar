@@ -2,9 +2,9 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import BestSellingProductsCard from "../../../components/Customer/Cards/BestSellingProductsCard";
-import { sellingProductsData } from "../../../constants";
-import { useTheme } from "../../../context/ThemeContext";
+import BestSellingProductsCard from "../../components/Customer/Cards/BestSellingProductsCard";
+import { sellingProductsData } from "../../constants/landingPageData";
+import { useTheme } from "../../context/ThemeContext";
 
 const BestSellingProducts = () => {
   const { toggleTheme, isDarkMode } = useTheme();

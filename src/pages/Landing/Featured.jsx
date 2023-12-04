@@ -1,6 +1,6 @@
 import React from "react";
-import FeatuedCard from "../../../components/Customer/Cards/FeatuedCard";
-import { featuredData } from "../../../constants";
+import FeatuedCard from "../../components/Customer/Cards/FeatuedCard";
+import { featuredData } from "../../constants/landingPageData";
 
 const Featured = () => {
   return (
