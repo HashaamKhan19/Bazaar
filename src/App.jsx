@@ -1,6 +1,5 @@
 import Aio from "./Aio";
 import { useTheme } from "./context/ThemeContext";
-import LandingPage from "./pages/Landing/LandingPage";
 
 function App() {
   const { isDarkMode } = useTheme();
