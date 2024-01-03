@@ -1,4 +1,4 @@
-import Aio from "./Aio";
+import RoutesConf from "./Routes";
 import { useTheme } from "./context/ThemeContext";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       font-Poppins
     `}
     >
-      <Aio />
+      <RoutesConf />
     </main>
   );
 }

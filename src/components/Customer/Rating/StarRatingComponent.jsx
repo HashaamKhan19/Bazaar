@@ -10,6 +10,7 @@ const StarRatingComponent = ({ iconsCount, size, transition }) => {
         size={size}
         SVGclassName={`inline-block`}
         transition={transition}
+        readonly
       />
     </div>
   );

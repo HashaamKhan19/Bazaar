@@ -31,7 +31,7 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import { FiSearch } from "react-icons/fi";
 import { RiShoppingBagLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../../../assets/svg/logo.svg";
 import { useTheme } from "../../../context/ThemeContext";
 
@@ -262,29 +262,33 @@ const Header = () => {
 
         <NavbarContent justify="end" className="font-medium">
           <NavbarItem isActive>
-            <Link size="sm" to="/">
+            <NavLink
+              size="sm"
+              to="/"
+              className={({ isActive }) => [isActive ? "text-primary" : ""]}
+            >
               Home
-            </Link>
+            </NavLink>
           </NavbarItem>
 
           <NavbarItem>
-            <Link
+            <NavLink
               size="sm"
               to="/products"
-              className={`mx-3 ${isDarkMode ? "text-white" : "text-[#495057]"}`}
+              className={({ isActive }) => `mx-3   ${isActive ? "text-primary" : ""}`}
             >
               Products
-            </Link>
+            </NavLink>
           </NavbarItem>
 
           <NavbarItem>
-            <Link
+            <NavLink
               size="sm"
               to="/vendor"
-              className={`${isDarkMode ? "text-white" : "text-[#495057]"}`}
+              className={({ isActive }) => [isActive ? "text-primary" : ""]}
             >
               Vendor
-            </Link>
+            </NavLink>
           </NavbarItem>
         </NavbarContent>
       </Navbar>

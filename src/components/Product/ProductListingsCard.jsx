@@ -5,12 +5,12 @@ import { useTheme } from "../../context/ThemeContext";
 import StarRatingComponent from "../Customer/Rating/StarRatingComponent";
 
 // eslint-disable-next-line react/prop-types
-const GridImgsCard = ({ image, title, desc, price, ...props }) => {
+const ProductListingsCard = ({ image, title, desc, price, ...props }) => {
   const { toggleTheme, isDarkMode } = useTheme();
 
   return (
     <div className="">
-      <div className="h-[300px] w-full">
+      <div className="w-full">
         <img
           src={image}
           alt="image"
@@ -51,4 +51,4 @@ const GridImgsCard = ({ image, title, desc, price, ...props }) => {
   );
 };
 
-export default GridImgsCard;
+export default ProductListingsCard;

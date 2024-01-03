@@ -11,7 +11,6 @@ const BestSellingProducts = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, containScroll: "trimSnaps" },
-    [Autoplay()]
   );
 
   const scrollPrev = useCallback(() => {
@@ -34,12 +33,12 @@ const BestSellingProducts = () => {
           ${isDarkMode ? "bg-white/60" : "bg-black/60"}
           ${isDarkMode ? "text-black" : "text-white"}
           ${isDarkMode ? "group-hover:bg-white" : "group-hover:bg-black"}
-            top-[55%] text-4xl p-2 left-[1%] rounded-full absolute cursor-pointer z-10 `}
+            top-[45%] text-4xl p-2 left-[1%] rounded-full absolute cursor-pointer z-10 `}
         />
       </button>
 
       <div
-        className="embla__viewport mx-auto overflow-scroll scrollbar-hide rounded-xl h-[420px]"
+        className="embla__viewport mx-auto overflow-scroll scrollbar-hide rounded h-[420px]"
         ref={emblaRef}
       >
         <div className="embla__container flex whitespace-nowrap ">
@@ -62,7 +61,7 @@ const BestSellingProducts = () => {
           ${isDarkMode ? "bg-white/60" : "bg-black/60"}
           ${isDarkMode ? "text-black" : "text-white"}
           ${isDarkMode ? "group-hover:bg-white" : "group-hover:bg-black"}
-            top-[55%] text-4xl p-2 right-[1%] rounded-full absolute cursor-pointer z-10 `}
+            top-[45%] text-4xl p-2 right-[1%] rounded-full absolute cursor-pointer z-10 `}
         />
       </button>
     </div>
